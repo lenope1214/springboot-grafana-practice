@@ -1,1 +1,20 @@
-spring.application.name=springboot-grafana-practice
+spring:
+  application:
+    name: springboot-grafana-practice
+
+## springboot-actuator
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus, metrics
+
+  metrics:
+    tags:
+      application: ${spring.application.name}
