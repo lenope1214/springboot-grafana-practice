@@ -44,3 +44,13 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+// boot Jar만, plain jar 는 사용하지 않음
+tasks.jar {
+    enabled = false
+}
+
+// bootJar 만 사용
+tasks.bootJar {
+    enabled = true
+}
