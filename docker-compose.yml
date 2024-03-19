@@ -15,6 +15,7 @@ services:
       - '--storage.tsdb.retention.time=200h'
       - '--web.enable-lifecycle'
     volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - /data/prometheus:/etc/prometheus
       - /data/prometheus/data:/prometheus
     ports:
